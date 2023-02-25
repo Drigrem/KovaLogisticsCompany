@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="order">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Номер телефона</th>
+                <th>Грузоподъёмность(Т)</th>
+                <th>Дистанции(Км)</th>
+                <th>Пароль</th>
+                <th>Время регистрации</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users %}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.surname}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.second_surname}}</td>
+                <td>{{u.phone_number}}</td>
+                <td>{{u.weight}}</td>
+                <td>{{u.distance}}</td>
+                <td>{{u.password}}</td>
+                <td>{{u.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

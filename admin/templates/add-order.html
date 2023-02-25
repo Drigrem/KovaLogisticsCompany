@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="add__order">
+    <form action="{{url_for('add_order')}}" method="post" class="form-order">
+        <div class="title">Укажите параметры заказа</div>
+        <input type="number" name="price" placeholder="Стоимость" required>
+        <input type="number" name="distance" placeholder="Расстояние" required>
+        <input type="number" name="weight" placeholder="Вес" required>
+        <input class="input__submit" type="submit" value="Добавить">
+        {% for msg in get_flashed_messages() %}
+        <div class="flash">{{msg}}</div>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}
